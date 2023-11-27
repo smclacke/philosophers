@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/20 17:39:36 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/11/27 16:27:31 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/11/27 20:15:42 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ static bool	died(t_god *info)
  * 			amount of times they needed to eat and have all 
  * 			eaten enough
  * 			OR
- * 			someone did eat in time and died
+ * 			someone did not eat in time and died
 */
 void	monitor(t_god *info)
 {

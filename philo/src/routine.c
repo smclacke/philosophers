@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/20 17:29:12 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/11/27 20:11:50 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/11/27 20:14:35 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ bool	check_stop_b(t_philo *philo)
 }
 
 /**
- * stop every philo going for a fork at one time
+ * stop every philo trying to eat at very start
  * half start eating while half think for the eat time
 */
 static void	waiting(t_philo *philo)
@@ -55,6 +55,11 @@ static void	eat(t_philo *philo)
 	pthread_mutex_unlock(philo->rfork_m);
 }
 
+/**
+ * to stop a deadlock, if a philo has some time to spare, 
+ * it sleeps for a bit to give a more hungry philo the chance
+ * to get forks first
+*/
 static void	check_time_gap(t_philo *philo)
 {
 	uint64_t	time_gap;

@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/26 19:40:19 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/11/27 15:43:12 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/11/27 20:16:47 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,11 @@ static	int	create_one_philo(t_god *info, pthread_t *threads)
 	return (SUCCESS);
 }
 
+/**
+ * if there is only one philo, it will only have one fork
+ * and will never be able to eat, so it thinks, takes the
+ * one fork it has, and waits for the eat_time, then death comes
+*/
 int	handle_one(t_god *info, pthread_t *threads)
 {
 	if (create_one_philo(info, threads))
