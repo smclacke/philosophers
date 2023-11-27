@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 16:36:39 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/11/27 14:37:31 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/11/27 20:03:52 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ static int	init_data_mutexes(t_god *info)
 static int	check_arg_vals(t_god *info)
 {
 	if (info->data->philo_count <= 0 || info->data->time_die <= 0)
-		return (ft_error(ARGS_WRONG));
+		return (ft_error(WRONG_ARGS));
 	if (info->data->time_eat <= 0 || info->data->time_sleep <= 0)
-		return (ft_error(ARGS_WRONG));
+		return (ft_error(WRONG_ARGS));
 	if (info->data->eat_arg_b && info->data->eat_arg_count <= 0)
-		return (ft_error(ARGS_WRONG));
+		return (ft_error(WRONG_ARGS));
 	return (SUCCESS);
 }
 

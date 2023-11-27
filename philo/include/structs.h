@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 17:27:30 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/11/27 17:27:32 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/11/27 20:04:19 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@
 # define EATING "is eating\n"
 # define THINKING "is thinking\n"
 # define SLEEPING "is sleeping\n"
-# define EXTRA_SLEEP "is EXTRA sleeping\n"
+# define EXTRA_SLEEP "is EXTRA sleeping\n" // for testing
 
-# define ARGS_WRONG "input must be integer larger than 0\n"
+# define WRONG_ARGS "input must be integer larger than 0\n"
 
 typedef enum e_prog{
 	START,

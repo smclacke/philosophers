@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/20 17:29:12 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/11/27 19:59:57 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/11/27 20:11:50 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,28 +35,6 @@ static void	waiting(t_philo *philo)
 	display_message(philo, THINKING);
 	ft_sleep(philo, philo->data->time_eat);
 }
-
-/**
- * NO ONE SHOULD DIE
- * ./philo 5 800 200 200
- * ./philo 5 600 150 150
- * ./philo 4 410 200 200
- * ./philo 100 800 200 200
- * ./philo 105 800 200 200
- * ./philo 200 800 200 200
- * ./philo 3 650 200 100
- * ./philo
-*/
-
-/**
- * DIE DIE DIE
- * ./philo 1 800 200 200
- * ./philo 4 310 200 100
- * ./philo 4 200 205 200
- * ./philo 3 100 200 110
- * ./philo 3 100 200 210
- * ./philo
-*/
 
 static void	eat(t_philo *philo)
 {
