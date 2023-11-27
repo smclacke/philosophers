@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 17:46:43 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/11/26 19:38:58 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/11/28 00:45:55 by SarahLouise   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	display_message(t_philo *philo, char *msg)
 	time = current_time(philo->data->start_time_t);
 	if (ft_strcmp(msg, DIED) == 0)
 	{
-		printf("%lu %d %s", time, philo->id, msg);
+		printf("%llu %d %s\n", time, philo->id, msg);
 		pthread_mutex_lock(&philo->data->prog_m[STOP]);
 		philo->data->stop_b = true;
 		pthread_mutex_unlock(&philo->data->prog_m[STOP]);
@@ -50,7 +50,7 @@ void	display_message(t_philo *philo, char *msg)
 		pthread_mutex_unlock(&philo->data->prog_m[DISPLAY]);
 	else
 	{
-		printf("%lu %d %s", time, philo->id, msg);
+		printf("%llu %d %s\n", time, philo->id, msg);
 		pthread_mutex_unlock(&philo->data->prog_m[DISPLAY]);
 	}
 }

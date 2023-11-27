@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 17:27:30 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/11/27 20:12:43 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/11/28 00:45:24 by SarahLouise   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@
 # define SUCCESS 0
 # define ERROR 1
 
-# define DIED "died\n"
-# define TAKEN_FORK "has taken a fork\n"
-# define EATING "is eating\n"
-# define THINKING "is thinking\n"
-# define SLEEPING "is sleeping\n"
+# define DIED "died"
+# define TAKEN_FORK "has taken a fork"
+# define EATING "is eating"
+# define THINKING "is thinking"
+# define SLEEPING "is sleeping"
 
-# define WRONG_ARGS "input must be integer larger than 0\n"
+# define WRONG_ARGS "input must be integer larger than 0"
 
 typedef enum e_prog{
 	START,
