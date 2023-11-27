@@ -6,7 +6,7 @@
 #    By: SarahLouise <SarahLouise@student.codam.      +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/11/14 12:29:51 by SarahLouise   #+#    #+#                  #
-#    Updated: 2023/11/27 19:45:04 by smclacke      ########   odam.nl          #
+#    Updated: 2023/11/27 20:24:51 by smclacke      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ INCLUDE			= -Iinclude
 
 CC				= cc
 CFLAGS			= -Wall -Wextra -Werror 
+# -g -fsanitize=address
 # -g -fsanitize=thread
 
 HEADERS			= philo.h
