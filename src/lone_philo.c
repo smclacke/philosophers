@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/26 19:40:19 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/11/27 20:16:47 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/11/29 10:58:26 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ static	int	create_one_philo(t_god *info, pthread_t *threads)
 }
 
 /**
+ * EVERY philo needs to be a thread, so even this doomed dude
+ * 
  * if there is only one philo, it will only have one fork
  * and will never be able to eat, so it thinks, takes the
  * one fork it has, and waits for the eat_time, then death comes

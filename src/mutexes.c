@@ -6,12 +6,16 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 17:43:58 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/11/27 19:59:14 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/11/29 10:49:09 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philo.h"
 
+/**
+ * first philo's forks are swapped over to help avoid a deadlock
+ * the rest have i as left fork and i - 1 for right fork
+*/
 int	assign_forks(t_god *info)
 {
 	int	i;
@@ -34,6 +38,10 @@ int	assign_forks(t_god *info)
 	return (SUCCESS);
 }
 
+/**
+ * lock the x_eat variable to check whether all philos have eaten enough 
+ * in the monitor
+*/
 int	create_eat_amount_mutex(t_god *info)
 {
 	int		i;
@@ -44,13 +52,17 @@ int	create_eat_amount_mutex(t_god *info)
 		if (pthread_mutex_init(&info->philipas[i].eat_xamount_m, NULL))
 		{
 			destroy_eat_amount_mutex(info, i);
-			return (ft_error("eat_xamount mutex failes"));
+			return (ft_error("eat_xamount mutex failed"));
 		}
 		i++;
 	}
 	return (SUCCESS);
 }
 
+/**
+ * lock the dinner_time variable to check whether someone
+ * didn't eat in time and therefore died
+*/
 int	create_dinner_time_mutex(t_god *info)
 {
 	int		i;
@@ -69,6 +81,9 @@ int	create_dinner_time_mutex(t_god *info)
 	return (SUCCESS);
 }
 
+/**
+ * array of fork mutexes, each philo is then assigned a left and right fork
+*/
 int	create_forks_mutex(t_god *info)
 {
 	int					i;
@@ -97,6 +112,11 @@ int	create_forks_mutex(t_god *info)
 	return (SUCCESS);
 }
 
+/**
+ * mutex array for the program: start, stop, display
+ * all = 3, number of mutexes needed to control the general
+ * run of the program
+*/
 int	create_prog_mutex(t_god *info)
 {
 	int				i;

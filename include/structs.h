@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 17:27:30 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/11/28 00:45:24 by SarahLouise   ########   odam.nl         */
+/*   Updated: 2023/11/29 10:44:41 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,11 @@
 # define THINKING "is thinking"
 # define SLEEPING "is sleeping"
 
-# define WRONG_ARGS "input must be integer larger than 0"
+# define WRONG_ARGS "input must be an integer larger than 0"
 
+/**
+ * an array of mutexes to control the simulation
+*/
 typedef enum e_prog{
 	START,
 	STOP,

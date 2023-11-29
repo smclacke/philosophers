@@ -6,12 +6,16 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/20 17:40:05 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/11/27 19:44:46 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/11/29 10:54:01 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philo.h"
 
+/**
+ * each philo has their own last_eaten_t time
+ * calculated from the moment they begin eating
+*/
 void	last_eaten_time(t_philo *philo)
 {
 	pthread_mutex_lock(&philo->dinner_time_m);
@@ -20,11 +24,15 @@ void	last_eaten_time(t_philo *philo)
 }
 
 /**
- * if you were to use usleep(10), trying to get it that acurate 
- * will cause it to be a lot less acurate since usleep(10) will have
- * loads of calls to the system (server? / CPU), each time creating
- * a slight delay/a few seconds less acurate 
+ * if you were to use usleep(10), trying to sleep an accurate 
+ * amount of time can cause usleep() to be a lot less accurate
+ * e.g. usleep(10) will have loads of calls to the system and 
+ * the CPU will be over loaded causing small but many discrepancies, 
+ * each time a slight delay is created 
  * usleep(250) sleeps incremently while not calling the system so much
+ * 
+ * ensure after a philo has died, that we don't continue
+ * to sleep but the simulation just prints and stops
 */
 void	ft_sleep(t_philo *philo, int waiting)
 {
@@ -44,9 +52,6 @@ void	ft_sleep(t_philo *philo, int waiting)
 
 /**
  * @brief	time function in milliseconds from start of philo life
- * 
- * @param	data pass the start time of philo life and then start the clock
- * @return	unsigned long int milliseconds since philo life started
  */
 uint64_t	current_time(uint64_t start)
 {
@@ -56,8 +61,6 @@ uint64_t	current_time(uint64_t start)
 /**
  * @brief	using gettimeofday function (microseconds from jan 1970)
  * 			 get time in milliseconds
- * 
- * @return	long current milliseconds since 1970
  */
 uint64_t	ft_get_time(void)
 {

@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/20 17:39:36 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/11/27 20:15:42 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/11/29 10:46:04 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@
  * @brief	if the fifth arg was given and each philo must eat
  * 			a certain amount of times, this must be checked in 
  * 			the monitor so we know to stop when everyone 
- * 			has eaten enough
+ * 			has eaten enough, philos can eat more than eat_arg times
+ * 			but there is a problem if simulation stops before everyone
+ * 			has eaten AT LEAST eat_arg times
 */
 static bool	eaten_enough(t_god *info)
 {
@@ -41,7 +43,7 @@ static bool	eaten_enough(t_god *info)
 }
 
 /**
- * @brief	if too much time has passed since a philo last eat, 
+ * @brief	if too much time has passed since a philo last ate, 
  * 			they die and the simulation stops, this must be 
  * 			checked in the monitor during the prog run 
 */

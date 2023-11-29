@@ -6,16 +6,12 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/20 17:29:12 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/11/27 20:14:35 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/11/29 10:57:43 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/philo.h"
 
-/**
- * for routine while loop, if not locked, get data race when setting
- * stop_b in display_message() || eaten_enough()
-*/
 bool	check_stop_b(t_philo *philo)
 {
 	bool		stop_check;
@@ -68,15 +64,35 @@ static void	check_time_gap(t_philo *philo)
 	uint64_t	time_eat;
 
 	pthread_mutex_lock(&philo->dinner_time_m);
+
 	time_gap = current_time(philo->data->start_time_t) - philo->last_eaten_t;
 	time_die = (uint64_t)philo->data->time_die;
 	time_eat = (uint64_t)philo->data->time_eat;
+
 	enough_time = (time_die - time_eat);
 	if (time_gap < enough_time)
 		ft_sleep(philo, philo->data->time_eat);
+
 	pthread_mutex_unlock(&philo->dinner_time_m);
 }
 
+/**
+ * starting with the start mutex, all philos are
+ * queuing here until start mutex is unlocked in 
+ * create_threads() after all threads are made
+ * and start bool is set, ensuring no philo gets
+ * a head start
+ *
+ * all odd numbered philos start by waiting eat_time 
+ * all even numbered philos can start eating
+ * 
+ * if philo has lots of time since last eaten and before
+ * death, it can wait to give eating priority to
+ * other more hungry philos
+ * 
+ * if not eating, must sleep sleep arg amount
+ * otherwise they are doing something thinking
+*/
 void	*routine(void *data)
 {
 	t_philo	*philo;
