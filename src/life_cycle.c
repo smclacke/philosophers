@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/20 17:29:41 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/11/29 10:59:57 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/12/21 22:15:00 by SarahLouise   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ static int	thread_and_monitor(t_god *info, pthread_t *threads)
 }
 
 /**
- * one philo has a slightly didn't life routine,
+ * one philo has a slightly different life routine,
  * so it's handled separately from the rest
 */
 int	life_cycle(t_god *info)
