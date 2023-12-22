@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/20 17:29:41 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/12/21 22:15:00 by SarahLouise   ########   odam.nl         */
+/*   Updated: 2023/12/22 00:30:13 by SarahLouise   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,12 +79,12 @@ int	life_cycle(t_god *info)
 		destroy_everything(info);
 		return (ft_error("thread malloc noped"));
 	}
-	if (info->philipas->one_philo_b == true)
-	{
-		if (handle_one(info, threads))
-			return (ERROR);
-		return (SUCCESS);
-	}
+	// if (info->philipas->one_philo_b == true)
+	// {
+	// 	if (handle_one(info, threads))
+	// 		return (ERROR);
+	// 	return (SUCCESS);
+	// }
 	if (thread_and_monitor(info, threads))
 		return (ft_error("threading fail"));
 	return (SUCCESS);

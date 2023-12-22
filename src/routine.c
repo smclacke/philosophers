@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/20 17:29:12 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/11/29 10:57:43 by smclacke      ########   odam.nl         */
+/*   Updated: 2023/12/22 00:35:27 by SarahLouise   ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,15 @@ static void	waiting(t_philo *philo)
 	ft_sleep(philo, philo->data->time_eat);
 }
 
-static void	eat(t_philo *philo)
+static int	eat(t_philo *philo)
 {
 	pthread_mutex_lock(philo->lfork_m);
 	display_message(philo, TAKEN_FORK);
+	if (philo->data->philo_count == 1)
+	{
+		ft_sleep(philo, philo->data->time_eat);
+		return(1);
+	}
 	pthread_mutex_lock(philo->rfork_m);
 	display_message(philo, TAKEN_FORK);
 	last_eaten_time(philo);
@@ -49,6 +54,7 @@ static void	eat(t_philo *philo)
 	}
 	pthread_mutex_unlock(philo->lfork_m);
 	pthread_mutex_unlock(philo->rfork_m);
+	return (0);
 }
 
 /**
@@ -107,7 +113,9 @@ void	*routine(void *data)
 	while (check_stop_b(philo) == false)
 	{
 		check_time_gap(philo);
-		eat(philo);
+		if (eat(philo) == 1)
+			return (NULL);
+		// eat(philo);
 		display_message(philo, SLEEPING);
 		ft_sleep(philo, philo->data->time_sleep);
 		display_message(philo, THINKING);
