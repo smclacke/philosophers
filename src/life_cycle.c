@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/20 17:29:41 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/12/22 00:30:13 by SarahLouise   ########   odam.nl         */
+/*   Updated: 2024/02/09 17:18:17 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void	join(pthread_t *threads, int count)
 
 /**
  * only if all philo threads have been successfully created,
- * can we set our start bool to true and being the simulation
+ * can we set our start bool to true and begin the simulation
 */
 static int	create_threads(t_god *info, pthread_t *threads)
 {
@@ -65,10 +65,6 @@ static int	thread_and_monitor(t_god *info, pthread_t *threads)
 	return (SUCCESS);
 }
 
-/**
- * one philo has a slightly different life routine,
- * so it's handled separately from the rest
-*/
 int	life_cycle(t_god *info)
 {
 	pthread_t	*threads;
@@ -79,12 +75,6 @@ int	life_cycle(t_god *info)
 		destroy_everything(info);
 		return (ft_error("thread malloc noped"));
 	}
-	// if (info->philipas->one_philo_b == true)
-	// {
-	// 	if (handle_one(info, threads))
-	// 		return (ERROR);
-	// 	return (SUCCESS);
-	// }
 	if (thread_and_monitor(info, threads))
 		return (ft_error("threading fail"));
 	return (SUCCESS);

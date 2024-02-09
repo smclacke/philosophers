@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 16:21:33 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/11/27 15:41:41 by smclacke      ########   odam.nl         */
+/*   Updated: 2024/02/09 17:21:35 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,6 @@ void			*routine(void *data);
 
 // ----- monitor -----//
 void			monitor(t_god *info);
-
-// ----- lone_philo -----//
-int				handle_one(t_god *info, pthread_t *threads);
 
 // ----- ft_atoi -----//
 int				ft_atoi(char *str);

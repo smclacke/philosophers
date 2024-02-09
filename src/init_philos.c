@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 17:43:30 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/11/27 14:37:47 by smclacke      ########   odam.nl         */
+/*   Updated: 2024/02/09 17:19:44 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,6 @@ static t_philo	*init_philos(t_god *info, t_philo *philo_arr)
 	t_philo		one_philo;
 
 	i = 0;
-	if (info->data->philo_count == 1)
-		one_philo.one_philo_b = true;
-	else
-		one_philo.one_philo_b = false;
 	while (i < info->data->philo_count)
 	{
 		one_philo.id = i + 1;

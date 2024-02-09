@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/16 17:27:30 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/12/04 14:04:49 by smclacke      ########   odam.nl         */
+/*   Updated: 2024/02/09 17:20:42 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,6 @@ typedef struct s_philo{
 	t_data					*data;
 	int						x_eaten;
 	uint64_t				last_eaten_t;
-
-	bool					one_philo_b;
 
 	pthread_mutex_t			eat_xamount_m;
 	pthread_mutex_t			dinner_time_m;

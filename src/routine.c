@@ -6,7 +6,7 @@
 /*   By: smclacke <smclacke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/11/20 17:29:12 by smclacke      #+#    #+#                 */
-/*   Updated: 2023/12/22 00:35:27 by SarahLouise   ########   odam.nl         */
+/*   Updated: 2024/02/09 17:17:51 by smclacke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,6 @@ void	*routine(void *data)
 		check_time_gap(philo);
 		if (eat(philo) == 1)
 			return (NULL);
-		// eat(philo);
 		display_message(philo, SLEEPING);
 		ft_sleep(philo, philo->data->time_sleep);
 		display_message(philo, THINKING);
