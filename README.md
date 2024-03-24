@@ -4,12 +4,12 @@ Image: Ron Swanson - adit.io
 
 
 ## Philosophers
-#*I never thought philosophy would be so deadly*
+# *I never thought philosophy would be so deadly*
 
 
-#A solution to the classic Dining Philosophers problem using threads.
+# A solution to the classic Dining Philosophers problem using threads.
 
-#Program arguments:
+# Program arguments:
 
   number of philosophers
   time to die - in milliseconds
