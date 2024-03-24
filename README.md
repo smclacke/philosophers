@@ -1,5 +1,6 @@
 
 ![philo](https://github.com/smclacke/philosophers/assets/115113929/96a85698-d110-4462-b748-6dc66f3094e2)
+
 Image: Ron Swanson - adit.io
 
 
@@ -31,4 +32,7 @@ The problem was designed to illustrate the challenges of avoiding deadlock, a sy
 - repeat from the beginning.
 
 However, each philosopher will think for an undetermined amount of time and may end up holding a left fork thinking, staring at the right side of the plate, unable to eat because there is no right fork, until he starves.
-  
+
+
+
+source: https://en.wikipedia.org/wiki/Dining_philosophers_problem
