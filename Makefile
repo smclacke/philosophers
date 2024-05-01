@@ -6,7 +6,7 @@
 #    By: SarahLouise <SarahLouise@student.codam.      +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/11/14 12:29:51 by SarahLouise   #+#    #+#                  #
-#    Updated: 2023/11/27 20:24:51 by smclacke      ########   odam.nl          #
+#    Updated: 2024/05/01 13:47:00 by smclacke      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,8 @@ INCLUDE			= -Iinclude
 
 CC				= cc
 CFLAGS			= -Wall -Wextra -Werror 
-# -g -fsanitize=address
-# -g -fsanitize=thread
+CFLAGS			+= -g -fsanitize=address
+#CFLAGS			+= -g -fsanitize=thread
 
 HEADERS			= philo.h
 HEADER_DIR		= include
@@ -31,7 +31,6 @@ SRCS		= main.c						\
 				life_cycle.c				\
 				monitor.c					\
 				routine.c					\
-				lone_philo.c				\
 				destroy_mutexes.c			\
 				error.c						\
 				ft_atoi.c					\
