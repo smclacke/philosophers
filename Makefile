@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         ::::::::             #
-#    Makefile                                           :+:    :+:             #
+#    Makefile                                            :+:    :+:            #
 #                                                      +:+                     #
 #    By: SarahLouise <SarahLouise@student.codam.      +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/11/14 12:29:51 by SarahLouise   #+#    #+#                  #
-#    Updated: 2024/05/01 13:47:00 by smclacke      ########   odam.nl          #
+#    Updated: 2024/09/11 12:23:58 by smclacke       ########   odam.nl         #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,4 +74,4 @@ fclean		: clean
 
 re			: fclean all
 
-.PHONY: all clean flcan re
+.PHONY: all clean fclean re
