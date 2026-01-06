@@ -4,6 +4,9 @@
 # Unignore Makefile
 !Makefile
 
+# Unignore readme files
+!README.md
+
 # Unignore all dirs
 !*/
 
